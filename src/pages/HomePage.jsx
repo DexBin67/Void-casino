@@ -11,20 +11,20 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         zIndex: 0
       }}></div>
 
-      {/* CLEAN VOID FOX - No white box */}
-      <div style={{ position: 'absolute', top: '100px', left: '50%', transform: 'translateX(-50%)', zIndex: 5 }}>
+      {/* VOID FOX - Big & Clean */}
+      <div style={{ position: 'absolute', top: '90px', left: '50%', transform: 'translateX(-50%)', zIndex: 5 }}>
         <img 
           src="/images/void-fox.png" 
           alt="VOID FOX" 
           style={{ 
-            height: "320px", 
+            height: "310px", 
             filter: "drop-shadow(0 0 80px #c300ff)" 
           }} 
         />
       </div>
 
-      {/* Text - Pushed down to avoid overlap */}
-      <div style={{ position: 'relative', zIndex: 10, padding: '420px 40px 80px', textAlign: 'center' }}>
+      {/* Hero Text - Pushed down */}
+      <div style={{ position: 'relative', zIndex: 10, padding: '410px 40px 80px', textAlign: 'center' }}>
         <h1 style={{ 
           fontSize: '6.8rem', 
           lineHeight: '0.9', 
@@ -41,13 +41,49 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         </p>
       </div>
 
-      {/* Games Grid */}
+      {/* FULL GAMES GRID */}
       <div style={{ padding: '0 40px 100px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '28px' }}>
-          <Link to="/crash" style={{ textDecoration: 'none' }}>...</Link>
-          <Link to="/plinko" style={{ textDecoration: 'none' }}>...</Link>
-          <Link to="/mines" style={{ textDecoration: 'none' }}>...</Link>
-          <Link to="/dino" style={{ textDecoration: 'none' }}>...</Link>
+          
+          <Link to="/crash" style={{ textDecoration: 'none' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+              <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+              <div style={{ padding: '20px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>CRASH</h3>
+                <p style={{ color: '#00ff9d' }}>Multipliers up to 1000x</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link to="/plinko" style={{ textDecoration: 'none' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+              <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+              <div style={{ padding: '20px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>PLINKO</h3>
+                <p style={{ color: '#00ff9d' }}>Drop & Win Big</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link to="/mines" style={{ textDecoration: 'none' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+              <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+              <div style={{ padding: '20px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>MINES</h3>
+                <p style={{ color: '#00ff9d' }}>High Risk High Reward</p>
+              </div>
+            </div>
+          </Link>
+
+          <Link to="/dino" style={{ textDecoration: 'none' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+              <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
+              <div style={{ padding: '20px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>DINO RUN</h3>
+                <p style={{ color: '#00ff9d' }}>Endless Runner</p>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </div>
