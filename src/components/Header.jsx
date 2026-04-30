@@ -7,7 +7,7 @@ const GAME_PATHS = ['/crash', '/plinko', '/dino', '/mines']
 
 function Header({ currentUser, onLoginClick, onRegisterClick }) {
     const location = useLocation()
-    const { balance } = useWallet()
+    const { balance, deposit } = useWallet()
     const [showWalletDropdown, setShowWalletDropdown] = useState(false)
     const dropdownRef = useRef(null)
     const isGamePage = GAME_PATHS.some(p => location.pathname.startsWith(p))
@@ -37,7 +37,7 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
             zIndex: 100
         }}>
             
-            {/* Logo */}
+            {/* Logo with Void Fox */}
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
                 <img 
                     src="/images/void-fox.png" 
@@ -50,7 +50,7 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
                 </div>
             </Link>
 
-            {/* Search */}
+            {/* Search Bar */}
             <div style={{ flex: 1, maxWidth: '420px', margin: '0 30px' }}>
                 <div style={{ position: 'relative' }}>
                     <input 
@@ -66,14 +66,18 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 {currentUser ? (
                     <>
-                        <div style={{ 
-                            background: '#1a1229', 
-                            padding: '8px 20px', 
-                            borderRadius: '9999px', 
-                            border: '1px solid #ffd700',
-                            color: '#ffd700',
-                            fontWeight: 'bold'
-                        }}>
+                        {/* Clickable Balance */}
+                        <div 
+                            onClick={() => setShowWalletDropdown(!showWalletDropdown)}
+                            style={{ 
+                                background: '#1a1229', 
+                                padding: '8px 20px', 
+                                borderRadius: '9999px', 
+                                border: '1px solid #ffd700',
+                                color: '#ffd700',
+                                fontWeight: 'bold',
+                                cursor: 'pointer'
+                            }}>
                             ₿ {balance.toFixed(4)}
                         </div>
 
