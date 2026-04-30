@@ -37,7 +37,7 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
             zIndex: 100
         }}>
             
-            {/* Left: Void Fox Logo */}
+            {/* Logo */}
             <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
                 <img 
                     src="/images/void-fox.png" 
@@ -50,7 +50,7 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
                 </div>
             </Link>
 
-            {/* Center Search */}
+            {/* Search */}
             <div style={{ flex: 1, maxWidth: '420px', margin: '0 30px' }}>
                 <div style={{ position: 'relative' }}>
                     <input 
@@ -66,27 +66,25 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                 {currentUser ? (
                     <>
-                        {/* Balance */}
                         <div style={{ 
                             background: '#1a1229', 
                             padding: '8px 20px', 
                             borderRadius: '9999px', 
                             border: '1px solid #ffd700',
                             color: '#ffd700',
-                            fontWeight: 'bold',
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px'
+                            fontWeight: 'bold'
                         }}>
                             ₿ {balance.toFixed(4)}
                         </div>
 
-                        {/* User */}
                         <div style={{ background: "#1a1229", padding: "8px 18px", borderRadius: "9999px", border: "1px solid #c300ff", color: "#ff99ff" }}>
                             👤 {currentUser.email.split('@')[0]}
                         </div>
 
-                        <button onClick={handleLogout} style={{ background: "#ff3366", color: "white", padding: "10px 22px", borderRadius: "9999px", border: "none", fontWeight: "bold" }}>
+                        <button 
+                            onClick={handleLogout}
+                            style={{ background: "#ff3366", color: "white", padding: "10px 22px", borderRadius: "9999px", border: "none", fontWeight: "bold", cursor: "pointer" }}
+                        >
                             LOGOUT
                         </button>
                     </>
