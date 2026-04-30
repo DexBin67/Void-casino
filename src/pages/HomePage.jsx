@@ -11,76 +11,81 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         zIndex: 0
       }}></div>
 
-      {/* VOID FOX - Big & Clean */}
-      <div style={{ position: 'absolute', top: '90px', left: '50%', transform: 'translateX(-50%)', zIndex: 5 }}>
+      {/* BIG VOID FOX */}
+      <div style={{ position: 'relative', zIndex: 5, paddingTop: '80px', textAlign: 'center' }}>
         <img 
           src="/images/void-fox.png" 
           alt="VOID FOX" 
           style={{ 
-            height: "310px", 
-            filter: "drop-shadow(0 0 80px #c300ff)" 
+            height: "260px", 
+            maxWidth: "90%", 
+            filter: "drop-shadow(0 0 70px #c300ff)" 
           }} 
         />
       </div>
 
-      {/* Hero Text - Pushed down */}
-      <div style={{ position: 'relative', zIndex: 10, padding: '410px 40px 80px', textAlign: 'center' }}>
+      {/* Hero Text */}
+      <div style={{ position: 'relative', zIndex: 10, padding: '20px 20px 60px', textAlign: 'center' }}>
         <h1 style={{ 
-          fontSize: '6.8rem', 
-          lineHeight: '0.9', 
-          margin: '0 0 20px',
+          fontSize: 'clamp(2.8rem, 8vw, 6.5rem)', 
+          lineHeight: '0.95', 
+          margin: '0 0 16px',
           background: 'linear-gradient(90deg, #ffd700, #ff00dd, #c300ff)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
-          textShadow: '0 0 80px #ff00dd'
+          textShadow: '0 0 60px #ff00dd'
         }}>
           VOID ORIGINALS
         </h1>
-        <p style={{ fontSize: '1.7rem', opacity: 0.9 }}>
+        <p style={{ fontSize: '1.2rem', opacity: 0.9, padding: '0 20px' }}>
           Provably fair • Instant payouts • Built for the rush
         </p>
       </div>
 
-      {/* FULL GAMES GRID */}
-      <div style={{ padding: '0 40px 100px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '28px' }}>
+      {/* Games Grid - Responsive */}
+      <div style={{ padding: '0 20px 80px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', 
+          gap: '20px' 
+        }}>
           
           <Link to="/crash" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
-              <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>CRASH</h3>
-                <p style={{ color: '#00ff9d' }}>Multipliers up to 1000x</p>
+              <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '160px', objectFit: 'cover' }} />
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 6px', color: '#ff99ff' }}>CRASH</h3>
+                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>Multipliers up to 1000x</p>
               </div>
             </div>
           </Link>
 
           <Link to="/plinko" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
-              <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>PLINKO</h3>
-                <p style={{ color: '#00ff9d' }}>Drop & Win Big</p>
+              <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '160px', objectFit: 'cover' }} />
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 6px', color: '#ff99ff' }}>PLINKO</h3>
+                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>Drop & Win Big</p>
               </div>
             </div>
           </Link>
 
           <Link to="/mines" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
-              <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>MINES</h3>
-                <p style={{ color: '#00ff9d' }}>High Risk High Reward</p>
+              <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '160px', objectFit: 'cover' }} />
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 6px', color: '#ff99ff' }}>MINES</h3>
+                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>High Risk High Reward</p>
               </div>
             </div>
           </Link>
 
           <Link to="/dino" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
-              <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>DINO RUN</h3>
-                <p style={{ color: '#00ff9d' }}>Endless Runner</p>
+              <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '160px', objectFit: 'cover' }} />
+              <div style={{ padding: '16px', textAlign: 'center' }}>
+                <h3 style={{ margin: '0 0 6px', color: '#ff99ff' }}>DINO RUN</h3>
+                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>Endless Runner</p>
               </div>
             </div>
           </Link>
