@@ -2,68 +2,42 @@ import { Link } from 'react-router-dom'
 
 function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
   return (
-    <div style={{ background: '#0a0a0f', minHeight: '100vh', color: '#e0d0ff' }}>
+    <div style={{ background: '#0a0a0f', minHeight: '100vh', color: '#e0d0ff', position: 'relative', overflow: 'hidden' }}>
 
-      {/* Minimal Hero */}
-      <div style={{ padding: '80px 40px 60px', textAlign: 'center', background: 'linear-gradient(#1a0033, #0a0a0f)' }}>
-        <h1 style={{ fontSize: '3.8rem', margin: '0 0 16px', color: '#ff00dd' }}>VOID ORIGINALS</h1>
-        <p style={{ fontSize: '1.4rem', opacity: 0.9 }}>Provably fair • Instant payouts • Built for the rush</p>
-      </div>
+      {/* Background + Fox accent glows */}
+      <div style={{ position: 'absolute', top: '20%', left: '10%', fontSize: '220px', opacity: 0.08, zIndex: 1, filter: 'blur(20px)' }}>🦊</div>
 
-      {/* Main Game Grid - The Focus */}
-      <div style={{ padding: '40px', maxWidth: '1600px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '24px' }}>
-          
-          {/* Crash */}
-          <Link to="/crash" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
-              <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '180px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>CRASH</h3>
-                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>Multipliers up to 1000x</p>
-              </div>
-            </div>
-          </Link>
+      {/* Hero */}
+      <div style={{ position: 'relative', zIndex: 5, padding: '160px 40px 120px', textAlign: 'center' }}>
+        <div style={{ color: '#ffd700', fontWeight: '900', letterSpacing: '6px', marginBottom: '20px' }}>DEEP IN THE VOID</div>
+        
+        <h1 style={{ 
+          fontSize: '7rem', 
+          lineHeight: '0.9', 
+          margin: '0 0 30px',
+          fontFamily: "'Impact', 'Arial Black', sans-serif",
+          background: 'linear-gradient(90deg, #ffd700, #ff00dd, #c300ff)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          textShadow: '0 0 90px #ffd700'
+        }}>
+          VOID ORIGINALS
+        </h1>
 
-          {/* Plinko */}
-          <Link to="/plinko" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
-              <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '180px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>PLINKO</h3>
-                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>Drop & Win Big</p>
-              </div>
-            </div>
-          </Link>
+        <p style={{ fontSize: '1.7rem', maxWidth: '720px', margin: '0 auto 50px', opacity: 0.9 }}>
+          Provably fair • Instant payouts • Built for those who chase the infinite rush
+        </p>
 
-          {/* Mines */}
-          <Link to="/mines" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
-              <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '180px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>MINES</h3>
-                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>High Risk High Reward</p>
-              </div>
-            </div>
-          </Link>
-
-          {/* Dino */}
-          <Link to="/dino" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
-              <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '180px', objectFit: 'cover' }} />
-              <div style={{ padding: '20px', textAlign: 'center' }}>
-                <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>DINO RUN</h3>
-                <p style={{ color: '#00ff9d', fontSize: '0.95rem' }}>Endless Runner</p>
-              </div>
-            </div>
-          </Link>
-
-          {/* Add more slots here later */}
-          <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '260px', color: '#666' }}>
-            More Slots Coming Soon
+        {!currentUser && (
+          <div style={{ display: 'flex', gap: '28px', justifyContent: 'center' }}>
+            <button onClick={onRegisterClick} style={{ padding: '24px 68px', fontSize: '1.5rem', background: 'linear-gradient(#ffd700, #ffaa00)', color: '#000', border: 'none', borderRadius: '9999px', fontWeight: 'bold', boxShadow: '0 0 70px #ffd700' }}>
+              JOIN THE VOID
+            </button>
+            <button onClick={onLoginClick} style={{ padding: '24px 68px', fontSize: '1.5rem', background: 'transparent', border: '3px solid #ffd700', color: '#ffd700', borderRadius: '9999px', fontWeight: 'bold' }}>
+              ENTER THE VOID
+            </button>
           </div>
-
-        </div>
+        )}
       </div>
     </div>
   )
