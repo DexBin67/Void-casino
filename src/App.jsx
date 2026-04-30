@@ -7,12 +7,15 @@ import CrashPage from './pages/CrashPage';
 import PlinkoPage from './pages/PlinkoPage';
 import MinesPage from './pages/MinesPage';
 import DinoPage from './pages/DinoPage';
-import SlotsPage from './pages/SlotsPage';
-import BlackjackPage from './pages/BlackjackPage';
-import RoulettePage from './pages/RoulettePage';
-import DicePage from './pages/DicePage';
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase";
+
+// Placeholder for the other 4 games (we'll fill them later)
+const Placeholder = ({ title }) => (
+  <div style={{ padding: '80px 20px', textAlign: 'center', color: '#fff', background: '#0a0a0f', minHeight: '100vh' }}>
+    <h1 style={{ color: '#c300ff' }}>{title}</h1>
+    <p style={{ fontSize: '1.4rem', marginTop: '40px' }}>🎮 Coming very soon - Full playable version loading...</p>
+    <p style={{ marginTop: '60px', opacity: 0.6 }}>Balance & betting system already connected</p>
+  </div>
+);
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -20,9 +23,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(user);
-    });
+    const unsubscribe = onAuthStateChanged(auth, (user) => setCurrentUser(user));
     return () => unsubscribe();
   }, []);
 
@@ -35,10 +36,12 @@ function App() {
           <Route path="plinko" element={<PlinkoPage />} />
           <Route path="mines" element={<MinesPage />} />
           <Route path="dino" element={<DinoPage />} />
-          <Route path="slots" element={<SlotsPage />} />
-          <Route path="blackjack" element={<BlackjackPage />} />
-          <Route path="roulette" element={<RoulettePage />} />
-          <Route path="dice" element={<DicePage />} />
+          
+          {/* Placeholders for the rest */}
+          <Route path="slots" element={<Placeholder title="SLOTS" />} />
+          <Route path="blackjack" element={<Placeholder title="BLACKJACK" />} />
+          <Route path="roulette" element={<Placeholder title="ROULETTE" />} />
+          <Route path="dice" element={<Placeholder title="DICE" />} />
         </Route>
       </Routes>
     </AntApp>
