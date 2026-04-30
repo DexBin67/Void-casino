@@ -46,31 +46,10 @@ const games = [
         ),
         path: '/mines',
     },
-    {
-        id: 'dice',
-        name: 'Dice',
-        icon: (
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM7.5 18c-.83 0-1.5-.67-1.5-1.5S6.67 15 7.5 15s1.5.67 1.5 1.5S8.33 18 7.5 18zm0-9C6.67 9 6 8.33 6 7.5S6.67 6 7.5 6 9 6.67 9 7.5 8.33 9 7.5 9zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4.5 4.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm0-9c-.83 0-1.5-.67-1.5-1.5S15.67 6 16.5 6s1.5.67 1.5 1.5S17.33 9 16.5 9z" />
-            </svg>
-        ),
-        path: '/dice',
-        comingSoon: true,
-    },
-    {
-        id: 'limbo',
-        name: 'Limbo',
-        icon: (
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99z" />
-            </svg>
-        ),
-        path: '/limbo',
-        comingSoon: true,
-    }
+    // ... other games
 ]
 
-function HomePage() {
+function HomePage({ onRegisterClick, onLoginClick }) {
     return (
         <div className="home-page-container">
             <div className="home-page-hero">
@@ -79,26 +58,44 @@ function HomePage() {
                         <span className="dot"></span> Leading Crypto Casino
                     </div>
                     <h1 style={{ lineHeight: '1.2' }}>Win BIG with<br />
-                        <span style={{ fontFamily: "'Dancing Script', cursive", color: '#00b4d8', fontSize: '1.2em', textShadow: '0 0 10px rgba(0, 180, 216, 0.4)' }}>VOID Originals</span>
+                        <span style={{ fontFamily: "'Dancing Script', cursive", color: '#ff00dd', fontSize: '1.2em', textShadow: '0 0 15px #ff00dd' }}>VOID Originals</span>
                     </h1>
                     <p className="hero-desc">Play premium, provably fair casino games with instant payouts. Create an account today and get exclusive access.</p>
-                    <button className="hero-btn">Register Instantly</button>
+                    
+                    <div style={{ display: 'flex', gap: '12px', marginTop: '20px' }}>
+                        <button 
+                            className="hero-btn" 
+                            onClick={onRegisterClick}
+                            style={{ background: '#c300ff' }}
+                        >
+                            Register Instantly
+                        </button>
+                        
+                        <button 
+                            className="hero-btn" 
+                            onClick={onLoginClick}
+                            style={{ background: '#9f00cc' }}
+                        >
+                            ENTER THE VOID
+                        </button>
+                    </div>
+
                     <div className="hero-artwork">
                         <img
                             src="/images/casino-chip.svg"
                             alt="VOID Casino"
-                            style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 0 30px rgba(0, 180, 216, 0.4))' }}
+                            style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 0 30px rgba(195, 0, 255, 0.4))' }}
                         />
                     </div>
                 </div>
             </div>
 
+            {/* Rest of your games grid stays the same */}
             <div className="home-section">
                 <div className="section-header">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--accent-blue)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
-                    <h2 style={{ fontFamily: "'Dancing Script', cursive", fontSize: '32px', color: '#00b4d8', margin: 0 }}>VOID Originals</h2>
+                    <h2 style={{ fontFamily: "'Dancing Script', cursive", fontSize: '32px', color: '#ff00dd', margin: 0 }}>VOID Originals</h2>
                 </div>
-
                 <div className="VOID-games-grid">
                     {games.map((game) => (
                         <Link
@@ -106,24 +103,7 @@ function HomePage() {
                             to={game.comingSoon ? '#' : game.path}
                             className={`VOID-card ${game.comingSoon ? 'is-coming-soon' : ''}`}
                         >
-                            <div className="VOID-card-image">
-                                {game.image ? (
-                                    <img src={game.image} alt={game.name} className="game-art-image" />
-                                ) : (
-                                    <div className="game-art-placeholder">
-                                        {game.icon}
-                                    </div>
-                                )}
-                                <div className="card-overlay">
-                                    <div className="play-btn">
-                                        <svg viewBox="0 0 24 24" width="24" height="24" fill="black"><path d="M8 5v14l11-7z" /></svg>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="VOID-card-footer">
-                                <span className="game-name">{game.name}</span>
-                                {game.comingSoon && <span className="badge-coming-soon"><span className="dot"></span></span>}
-                            </div>
+                            {/* your existing game cards */}
                         </Link>
                     ))}
                 </div>

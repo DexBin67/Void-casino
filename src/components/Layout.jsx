@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Header from './Header'
 import Sidebar from './Sidebar'
 
-function Layout() {
+function Layout({ currentUser, onLoginClick, onRegisterClick }) {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true)
 
     const toggleSidebar = () => {
@@ -14,7 +14,11 @@ function Layout() {
         <div className="app-layout">
             <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
             <div className="app-main-wrapper">
-                <Header />
+                <Header 
+                    currentUser={currentUser}
+                    onLoginClick={onLoginClick}
+                    onRegisterClick={onRegisterClick}
+                />
                 <main className="main-content">
                     <Outlet />
                 </main>
