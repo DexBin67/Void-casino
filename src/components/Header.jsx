@@ -60,7 +60,7 @@ function Header() {
         <header className="header">
             <div className="header-left">
                 <Link to="/" className="logo-link">
-                    <span className="logo" style={{ color: 'var(--text-primary)' }}>Stake</span>
+                    <span className="logo" style={{ color: 'var(--text-primary)' }}>Void</span>
                 </Link>
             </div>
 

@@ -1056,20 +1056,17 @@ body {
     border-bottom: 1px solid var(--border-color);
 }
 
-/* ===== Bet Button ===== */
-.bet-button {
-    width: 100%;
-    padding: 14px;
-    background: var(--accent-green);
-    border: none;
-    border-radius: var(--radius-md);
-    color: #000;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all var(--transition-fast);
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+/* BET Button - Dark Purple */
+button.bet-btn, .bet-button, button[type="button"], .ant-btn-primary {
+  background: linear-gradient(135deg, #6b00b3, #9f00cc) !important;
+  border: 2px solid #c300ff !important;
+  color: white !important;
+  box-shadow: 0 0 20px rgba(195, 0, 255, 0.7);
+}
+
+button.bet-btn:hover, .bet-button:hover {
+  background: linear-gradient(135deg, #c300ff, #ff00dd) !important;
+  box-shadow: 0 0 30px rgba(255, 0, 221, 0.9);
 }
 
 .bet-button:hover {
@@ -1509,4 +1506,105 @@ body {
     .multiplier-x {
         font-size: 32px;
     }
+}
+/* DEEP VOID THEME - darker, more mysterious, darker pink/neon */
+body, #root, .ant-layout, .ant-card, .game-container, .sidebar {
+  background: #030305 !important;
+  color: #d0d0ff !important;
+}
+
+/* Cards & Panels */
+.card, .ant-card, .panel, .bet-panel {
+  background: #0c0819 !important;
+  border: 2px solid #6b00b3 !important;
+  color: #e0b3ff !important;
+  box-shadow: 0 0 20px rgba(107, 0, 179, 0.5);
+}
+
+/* Buttons - darker pink */
+button, .ant-btn, .btn-primary, .register-btn {
+  background: #9f00cc !important;
+  color: white !important;
+  border: 2px solid #c300ff !important;
+  box-shadow: 0 0 15px rgba(195, 0, 255, 0.6);
+}
+
+button:hover, .ant-btn:hover {
+  background: #c300ff !important;
+  color: #050507 !important;
+  border-color: #ff00dd !important;
+  box-shadow: 0 0 30px rgba(255, 0, 221, 0.8);
+}
+
+/* Headers & Accents - darker pink glow */
+h1, h2, .logo, .header-text, .void-text {
+  color: #ff00dd !important;
+  text-shadow: 0 0 25px #ff00dd, 0 0 45px #c300ff;
+}
+
+/* Sidebar & Navigation */
+.sidebar, .ant-menu, .top-bar, .nav {
+  background: #0a0614 !important;
+  border-right: 1px solid #6b00b3;
+}
+
+/* Input fields */
+input, .bet-input, .amount-input {
+  background: #1a1229 !important;
+  border: 1px solid #9f00cc !important;
+  color: #ff99ff !important;
+}
+
+/* Extra void depth */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(195, 0, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+/* DARK PURPLE BET BUTTON - no green */
+.bet-button, button.bet, .ant-btn-primary, button[type="submit"], button[type="button"] {
+  background: linear-gradient(135deg, #4a0080, #7b00b3) !important;
+  border: 3px solid #c300ff !important;
+  color: white !important;
+  box-shadow: 0 0 25px rgba(195, 0, 255, 0.8) !important;
+}
+
+.bet-button:hover, button.bet:hover, .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #9f00cc, #ff00dd) !important;
+  box-shadow: 0 0 35px rgba(255, 0, 221, 0.9) !important;
+  transform: scale(1.05);
+}
+/* FINAL DEEP VOID THEME - black abyss + dark pink/purple neon */
+body, #root, .ant-layout, .ant-card, .game, .panel {
+  background: #020203 !important;
+  color: #e0d0ff !important;
+}
+
+.card, .ant-card, .bet-panel, button, .ant-btn {
+  background: #0f0a1f !important;
+  border: 2px solid #9f00cc !important;
+  color: #ff99ff !important;
+  box-shadow: 0 0 20px rgba(159, 0, 204, 0.6);
+}
+
+button:hover, .ant-btn:hover {
+  background: #c300ff !important;
+  color: #020203 !important;
+  border-color: #ff00dd !important;
+  box-shadow: 0 0 30px rgba(255, 0, 221, 0.9);
+}
+
+/* Headers & Accents */
+h1, h2, .logo, .header, .void-text {
+  color: #ff00dd !important;
+  text-shadow: 0 0 25px #ff00dd, 0 0 45px #c300ff;
+}
+
+/* Sidebar */
+.sidebar, .ant-menu, .nav {
+  background: #0a0619 !important;
+  border-right: 1px solid #9f00cc;
 }

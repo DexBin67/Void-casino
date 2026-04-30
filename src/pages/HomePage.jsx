@@ -79,14 +79,14 @@ function HomePage() {
                         <span className="dot"></span> Leading Crypto Casino
                     </div>
                     <h1 style={{ lineHeight: '1.2' }}>Win BIG with<br />
-                        <span style={{ fontFamily: "'Dancing Script', cursive", color: '#00b4d8', fontSize: '1.2em', textShadow: '0 0 10px rgba(0, 180, 216, 0.4)' }}>Stake Originals</span>
+                        <span style={{ fontFamily: "'Dancing Script', cursive", color: '#00b4d8', fontSize: '1.2em', textShadow: '0 0 10px rgba(0, 180, 216, 0.4)' }}>VOID Originals</span>
                     </h1>
                     <p className="hero-desc">Play premium, provably fair casino games with instant payouts. Create an account today and get exclusive access.</p>
                     <button className="hero-btn">Register Instantly</button>
                     <div className="hero-artwork">
                         <img
                             src="/images/casino-chip.svg"
-                            alt="Stake Casino"
+                            alt="VOID Casino"
                             style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 0 30px rgba(0, 180, 216, 0.4))' }}
                         />
                     </div>
@@ -96,17 +96,17 @@ function HomePage() {
             <div className="home-section">
                 <div className="section-header">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--accent-blue)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" /></svg>
-                    <h2 style={{ fontFamily: "'Dancing Script', cursive", fontSize: '32px', color: '#00b4d8', margin: 0 }}>Stake Originals</h2>
+                    <h2 style={{ fontFamily: "'Dancing Script', cursive", fontSize: '32px', color: '#00b4d8', margin: 0 }}>VOID Originals</h2>
                 </div>
 
-                <div className="stake-games-grid">
+                <div className="VOID-games-grid">
                     {games.map((game) => (
                         <Link
                             key={game.id}
                             to={game.comingSoon ? '#' : game.path}
-                            className={`stake-card ${game.comingSoon ? 'is-coming-soon' : ''}`}
+                            className={`VOID-card ${game.comingSoon ? 'is-coming-soon' : ''}`}
                         >
-                            <div className="stake-card-image">
+                            <div className="VOID-card-image">
                                 {game.image ? (
                                     <img src={game.image} alt={game.name} className="game-art-image" />
                                 ) : (
@@ -120,7 +120,7 @@ function HomePage() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="stake-card-footer">
+                            <div className="VOID-card-footer">
                                 <span className="game-name">{game.name}</span>
                                 {game.comingSoon && <span className="badge-coming-soon"><span className="dot"></span></span>}
                             </div>
