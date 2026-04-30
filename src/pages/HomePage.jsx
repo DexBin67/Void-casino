@@ -11,20 +11,20 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         zIndex: 0
       }}></div>
 
-      {/* BIG VOID FOX THIEF - CENTER STAGE */}
-      <div style={{ position: 'absolute', top: '80px', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
+      {/* VOID FOX THIEF - Clean & Centered */}
+      <div style={{ position: 'absolute', top: '120px', left: '50%', transform: 'translateX(-50%)', zIndex: 5 }}>
         <img 
           src="/images/void-fox.png" 
           alt="VOID FOX" 
           style={{ 
-            height: "340px", 
-            filter: "drop-shadow(0 0 80px #c300ff)" 
+            height: "280px", 
+            filter: "drop-shadow(0 0 70px #c300ff)" 
           }} 
         />
       </div>
 
-      {/* Hero Text */}
-      <div style={{ position: 'relative', zIndex: 5, padding: '240px 40px 100px', textAlign: 'center' }}>
+      {/* Hero Text - Moved down so fox doesn't overlap */}
+      <div style={{ position: 'relative', zIndex: 10, padding: '380px 40px 80px', textAlign: 'center' }}>
         <h1 style={{ 
           fontSize: '6.8rem', 
           lineHeight: '0.9', 
@@ -41,12 +41,11 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         </p>
       </div>
 
-      {/* Big Games Grid */}
-      <div style={{ padding: '0 40px 100px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 5 }}>
+      {/* Games Grid */}
+      <div style={{ padding: '0 40px 100px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '28px' }}>
-          
           <Link to="/crash" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>CRASH</h3>
@@ -56,7 +55,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
           </Link>
 
           <Link to="/plinko" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>PLINKO</h3>
@@ -66,7 +65,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
           </Link>
 
           <Link to="/mines" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>MINES</h3>
@@ -76,7 +75,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
           </Link>
 
           <Link to="/dino" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
+            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>DINO RUN</h3>
