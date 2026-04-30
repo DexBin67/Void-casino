@@ -49,7 +49,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         </p>
       </div>
 
-      {/* Games Grid with Hover Glow */}
+      {/* Games Grid with Hover */}
       <div style={{ padding: '20px 20px 120px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <div style={{ 
           display: 'grid', 
@@ -58,7 +58,4 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         }}>
           
           <Link to="/crash" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: 'all 0.4s', cursor: 'pointer' }}
-                 onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.06)'} 
-                 onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}>
-              <img src="/images/crash.avif" alt="Crash
+            <div className="game-card" style={{ background: '#1a1229', borderRadius
