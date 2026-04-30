@@ -9,19 +9,18 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
     const location = useLocation()
     const { balance, deposit } = useWallet()
     const [showDepositModal, setShowDepositModal] = useState(false)
-    const dropdownRef = useRef(null)
-
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-                // close if needed
-            }
-        }
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => document.removeEventListener('mousedown', handleClickOutside)
-    }, [])
+    const [amount, setAmount] = useState('')
 
     const handleLogout = () => auth.signOut()
+
+    const handleDeposit = () => {
+        const num = parseFloat(amount)
+        if (num > 0) {
+            deposit(num)
+            setAmount('')
+            setShowDepositModal(false)
+        }
+    }
 
     return (
         <header style={{ 
@@ -86,7 +85,7 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
                 )}
             </div>
 
-            {/* DEPOSIT MODAL */}
+            {/* REAL DEPOSIT MODAL */}
             {showDepositModal && (
                 <div style={{
                     position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
@@ -94,20 +93,31 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
                     display: 'flex', alignItems: 'center', justifyContent: 'center'
                 }}>
                     <div style={{ background: '#1a1229', padding: '40px', borderRadius: '20px', width: '360px', textAlign: 'center', border: '2px solid #c300ff' }}>
-                        <h2 style={{ color: '#ffd700', marginBottom: '20px' }}>Deposit BTC</h2>
-                        <p style={{ color: '#aaa', marginBottom: '20px' }}>Instant • No fees</p>
+                        <h2 style={{ color: '#ffd700', marginBottom: '10px' }}>Deposit BTC</h2>
+                        <p style={{ color: '#aaa', marginBottom: '25px' }}>Instant • No fees</p>
                         
                         <input 
                             type="number" 
                             placeholder="0.01" 
                             step="0.001"
-                            style={{ width: '100%', padding: '16px', fontSize: '18px', background: '#0a0a0f', border: '1px solid #c300ff', borderRadius: '12px', color: '#fff', textAlign: 'center' }}
-                            onChange={(e) => {/* later */}}
+                            value={amount}
+                            onChange={(e) => setAmount(e.target.value)}
+                            style={{ width: '100%', padding: '16px', fontSize: '18px', background: '#0a0a0f', border: '1px solid #c300ff', borderRadius: '12px', color: '#fff', textAlign: 'center', marginBottom: '20px' }}
                         />
 
-                        <div style={{ marginTop: '30px', display: 'flex', gap: '12px' }}>
-                            <button onClick={() => setShowDepositModal(false)} style={{ flex: 1, padding: '14px', background: '#333', border: 'none', borderRadius: '12px', color: '#fff' }}>Cancel</button>
-                            <button onClick={() => { deposit(0.05); setShowDepositModal(false); }} style={{ flex: 1, padding: '14px', background: '#ffd700', color: '#000', border: 'none', borderRadius: '12px', fontWeight: 'bold' }}>Deposit 0.05 BTC</button>
+                        <div style={{ display: 'flex', gap: '12px' }}>
+                            <button 
+                                onClick={() => setShowDepositModal(false)} 
+                                style={{ flex: 1, padding: '14px', background: '#333', border: 'none', borderRadius: '12px', color: '#fff' }}
+                            >
+                                Cancel
+                            </button>
+                            <button 
+                                onClick={handleDeposit} 
+                                style={{ flex: 1, padding: '14px', background: '#ffd700', color: '#000', border: 'none', borderRadius: '12px', fontWeight: 'bold' }}
+                            >
+                                Deposit
+                            </button>
                         </div>
                     </div>
                 </div>
