@@ -49,8 +49,8 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         </p>
       </div>
 
-      {/* Games Grid */}
-      <div style={{ padding: '20px 20px 80px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+      {/* Games Grid with Hover Animation */}
+      <div style={{ padding: '20px 20px 120px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
@@ -58,7 +58,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         }}>
           
           <Link to="/crash" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+            <div className="game-card" style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: 'all 0.4s' }}>
               <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>CRASH</h3>
@@ -68,7 +68,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
           </Link>
 
           <Link to="/plinko" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+            <div className="game-card" style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: 'all 0.4s' }}>
               <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>PLINKO</h3>
@@ -78,7 +78,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
           </Link>
 
           <Link to="/mines" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+            <div className="game-card" style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: 'all 0.4s' }}>
               <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>MINES</h3>
@@ -88,7 +88,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
           </Link>
 
           <Link to="/dino" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
+            <div className="game-card" style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: 'all 0.4s' }}>
               <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h3 style={{ margin: '0 0 8px', color: '#ff99ff' }}>DINO RUN</h3>
@@ -96,33 +96,27 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
               </div>
             </div>
           </Link>
+
         </div>
       </div>
 
-      {/* PREMIUM FOOTER */}
+      {/* Premium Footer */}
       <footer style={{ 
         background: '#050507', 
         borderTop: '1px solid #3a0033', 
         padding: '60px 20px 40px', 
         textAlign: 'center', 
         color: '#777', 
-        fontSize: '0.95rem',
-        position: 'relative',
-        zIndex: 10
+        fontSize: '0.95rem'
       }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '30px', flexWrap: 'wrap' }}>
             <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Provably Fair</a>
             <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Responsible Gambling</a>
-            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Terms & Conditions</a>
-            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Privacy Policy</a>
-            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Support</a>
+            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Terms</a>
+            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Privacy</a>
           </div>
-          
           <p>© 2026 VOID CASINO • All Rights Reserved</p>
-          <p style={{ marginTop: '8px', fontSize: '0.85rem' }}>
-            18+ | Gamble Responsibly | Gambling can be addictive
-          </p>
         </div>
       </footer>
     </div>
