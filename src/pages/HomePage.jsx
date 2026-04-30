@@ -7,7 +7,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
       minHeight: '100vh', 
       color: '#e0d0ff',
       width: '100%',
-      overflowY: 'auto',        // ← This forces scrolling
+      overflowY: 'auto',
       position: 'relative'
     }}>
 
@@ -50,13 +50,13 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
       </div>
 
       {/* Games Grid */}
-      <div style={{ padding: '20px 20px 120px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+      <div style={{ padding: '20px 20px 80px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
           gap: '24px' 
         }}>
-          {/* Crash */}
+          
           <Link to="/crash" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
@@ -67,7 +67,6 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
             </div>
           </Link>
 
-          {/* Plinko */}
           <Link to="/plinko" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
@@ -78,7 +77,6 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
             </div>
           </Link>
 
-          {/* Mines */}
           <Link to="/mines" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
@@ -89,7 +87,6 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
             </div>
           </Link>
 
-          {/* Dino */}
           <Link to="/dino" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
@@ -101,6 +98,33 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
           </Link>
         </div>
       </div>
+
+      {/* PREMIUM FOOTER */}
+      <footer style={{ 
+        background: '#050507', 
+        borderTop: '1px solid #3a0033', 
+        padding: '60px 20px 40px', 
+        textAlign: 'center', 
+        color: '#777', 
+        fontSize: '0.95rem',
+        position: 'relative',
+        zIndex: 10
+      }}>
+        <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '30px', flexWrap: 'wrap' }}>
+            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Provably Fair</a>
+            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Responsible Gambling</a>
+            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Terms & Conditions</a>
+            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Privacy Policy</a>
+            <a href="#" style={{ color: '#c300ff', textDecoration: 'none' }}>Support</a>
+          </div>
+          
+          <p>© 2026 VOID CASINO • All Rights Reserved</p>
+          <p style={{ marginTop: '8px', fontSize: '0.85rem' }}>
+            18+ | Gamble Responsibly | Gambling can be addictive
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }
