@@ -5,16 +5,6 @@ import { auth } from '../firebase'
 
 const GAME_PATHS = ['/crash', '/plinko', '/dino', '/mines']
 
-const BtcIcon = ({ size = 20, fontSize = 12 }) => (
-    <div style={{
-        width: size, height: size, minWidth: size,
-        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
-        borderRadius: '50%', background: 'linear-gradient(135deg, #f7931a, #ffb347)',
-        color: '#fff', fontWeight: 800, fontSize: fontSize,
-        boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)'
-    }}>₿</div>
-)
-
 function Header({ currentUser, onLoginClick, onRegisterClick }) {
     const location = useLocation()
     const { balance, deposit, resetBalance, transactions, toasts } = useWallet()
@@ -45,24 +35,30 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
         auth.signOut()
     }
 
-    const formattedBalance = balance.toLocaleString('en-US', {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2,
-    })
-
     return (
-        <header className="header">
+        <header className="header" style={{ background: '#0a0a0f', borderBottom: '1px solid #3a0033' }}>
             <div className="header-left">
-                <Link to="/" className="logo-link">
-                    <span className="logo" style={{ color: 'var(--text-primary)' }}>Void</span>
+                <Link to="/" className="logo-link" style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none' }}>
+                    {/* VOID FOX THIEF LOGO */}
+                    <img 
+                        src="/images/void-fox.png" 
+                        alt="VOID FOX" 
+                        style={{ 
+                            height: "58px", 
+                            filter: "drop-shadow(0 0 20px #c300ff)" 
+                        }} 
+                    />
+                    <div>
+                        <span style={{ fontSize: "34px", fontWeight: "900", color: "#ff00dd", letterSpacing: "-2px" }}>VOID</span>
+                        <span style={{ fontSize: "19px", color: "#ffd700", fontWeight: "bold" }}>CASINO</span>
+                    </div>
                 </Link>
             </div>
 
             <div className="header-center">
                 {isGamePage ? (
-                    /* Wallet Display on Game Pages */
                     <div className="header-wallet">
-                        {/* ... your existing wallet code ... */}
+                        {/* your wallet code stays here if you want */}
                     </div>
                 ) : (
                     <div className="search-input-wrapper">
@@ -83,10 +79,10 @@ function Header({ currentUser, onLoginClick, onRegisterClick }) {
                         }}>
                             👤 {currentUser.email.split('@')[0]}
                         </div>
-                        <button 
+                        <button
                             onClick={handleLogout}
-                            style={{ 
-                                background: "#ff3366", color: "white", border: "none", 
+                            style={{
+                                background: "#ff3366", color: "white", border: "none",
                                 padding: "8px 20px", borderRadius: "9999px", fontWeight: "bold", cursor: "pointer"
                             }}
                         >
