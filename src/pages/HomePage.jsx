@@ -4,23 +4,30 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
   return (
     <div style={{ background: '#0a0a0f', minHeight: '100vh', color: '#e0d0ff', position: 'relative', overflow: 'hidden' }}>
 
-      {/* Background */}
+      {/* Background Glow */}
       <div style={{
         position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
         background: 'radial-gradient(circle at 30% 20%, rgba(180,0,255,0.4) 0%, transparent 60%), radial-gradient(circle at 70% 70%, rgba(0,255,200,0.3) 0%, transparent 70%)',
         zIndex: 0
       }}></div>
 
-      {/* Void Fox Mascot (Top Left Accent) */}
-      <div style={{ position: 'absolute', top: '80px', left: '60px', zIndex: 10, opacity: 0.9 }}>
-        <div style={{ fontSize: '180px', filter: 'drop-shadow(0 0 40px #c300ff)' }}>🦊</div>
+      {/* BIG VOID FOX THIEF - CENTER STAGE */}
+      <div style={{ position: 'absolute', top: '80px', left: '50%', transform: 'translateX(-50%)', zIndex: 10 }}>
+        <img 
+          src="/images/void-fox.png" 
+          alt="VOID FOX" 
+          style={{ 
+            height: "340px", 
+            filter: "drop-shadow(0 0 80px #c300ff)" 
+          }} 
+        />
       </div>
 
-      {/* Hero with Mascot Influence */}
-      <div style={{ position: 'relative', zIndex: 5, padding: '140px 40px 80px', textAlign: 'center' }}>
+      {/* Hero Text */}
+      <div style={{ position: 'relative', zIndex: 5, padding: '240px 40px 100px', textAlign: 'center' }}>
         <h1 style={{ 
-          fontSize: '6.2rem', 
-          lineHeight: '0.95', 
+          fontSize: '6.8rem', 
+          lineHeight: '0.9', 
           margin: '0 0 20px',
           background: 'linear-gradient(90deg, #ffd700, #ff00dd, #c300ff)',
           WebkitBackgroundClip: 'text',
@@ -29,15 +36,15 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
         }}>
           VOID ORIGINALS
         </h1>
-        <p style={{ fontSize: '1.6rem', marginBottom: '40px', opacity: 0.9 }}>
+        <p style={{ fontSize: '1.7rem', opacity: 0.9 }}>
           Provably fair • Instant payouts • Built for the rush
         </p>
       </div>
 
-      {/* Big Games Grid - The Main Focus */}
-      <div style={{ padding: '0 40px 80px', maxWidth: '1600px', margin: '0 auto' }}>
+      {/* Big Games Grid */}
+      <div style={{ padding: '0 40px 100px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 5 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '28px' }}>
-
+          
           <Link to="/crash" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033', transition: '0.3s' }}>
               <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '200px', objectFit: 'cover' }} />
@@ -77,7 +84,6 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
               </div>
             </div>
           </Link>
-
         </div>
       </div>
     </div>
