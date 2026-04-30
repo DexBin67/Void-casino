@@ -5,13 +5,15 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
     <div style={{ 
       background: '#0a0a0f', 
       minHeight: '100vh', 
-      color: '#e0d0ff', 
-      position: 'relative' 
+      color: '#e0d0ff',
+      width: '100%',
+      overflowY: 'auto',        // ← This forces scrolling
+      position: 'relative'
     }}>
 
       {/* Background Glow */}
       <div style={{
-        position: 'absolute', top: 0, left: 0, right: 0, bottom: 0,
+        position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
         background: 'radial-gradient(circle at 30% 20%, rgba(180,0,255,0.4) 0%, transparent 60%), radial-gradient(circle at 70% 70%, rgba(0,255,200,0.3) 0%, transparent 70%)',
         zIndex: 0
       }}></div>
@@ -48,13 +50,13 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
       </div>
 
       {/* Games Grid */}
-      <div style={{ padding: '20px 20px 100px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
+      <div style={{ padding: '20px 20px 120px', maxWidth: '1600px', margin: '0 auto', position: 'relative', zIndex: 10 }}>
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
           gap: '24px' 
         }}>
-          
+          {/* Crash */}
           <Link to="/crash" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/crash.avif" alt="Crash" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
@@ -65,6 +67,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
             </div>
           </Link>
 
+          {/* Plinko */}
           <Link to="/plinko" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/plinko.avif" alt="Plinko" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
@@ -75,6 +78,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
             </div>
           </Link>
 
+          {/* Mines */}
           <Link to="/mines" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/mines.avif" alt="Mines" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
@@ -85,6 +89,7 @@ function HomePage({ onRegisterClick, onLoginClick, currentUser }) {
             </div>
           </Link>
 
+          {/* Dino */}
           <Link to="/dino" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1229', borderRadius: '16px', overflow: 'hidden', border: '1px solid #3a0033' }}>
               <img src="/images/dino.avif" alt="Dino" style={{ width: '100%', height: '170px', objectFit: 'cover' }} />
