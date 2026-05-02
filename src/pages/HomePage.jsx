@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function HomePage({ currentUser }) {
+function HomePage() {
   return (
     <div style={{ 
       background: '#0a0a0f', 
@@ -11,7 +11,7 @@ function HomePage({ currentUser }) {
       overflowX: 'hidden',
       overflowY: 'auto'
     }}>
-      {/* Hero with Fox */}
+      {/* Hero */}
       <div style={{ textAlign: 'center', padding: '80px 20px 40px' }}>
         <img src="/images/void-fox.png" alt="VOID FOX" style={{ height: "260px", filter: "drop-shadow(0 0 70px #c300ff)" }} />
         <h1 style={{ 
